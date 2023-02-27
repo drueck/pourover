@@ -32,8 +32,8 @@ defmodule Pourover.Router do
         _ -> []
       end
 
-    [add_timestamp(conn.params) | brews]
-    |> Jason.encode!()
+    [add_generated_fields(conn.params) | brews]
+    |> Jason.encode!(pretty: true)
     |> then(fn data -> File.write!("data/brews.json", data) end)
 
     render(conn, "index.html", message: "submission saved!")
@@ -59,10 +59,20 @@ defmodule Pourover.Router do
     send_resp(conn, status || 200, body)
   end
 
+  defp add_generated_fields(brew) do
+    brew
+    |> add_timestamp()
+    |> add_id()
+  end
+
   defp add_timestamp(brew) do
     timestamp = DateTime.utc_now() |> DateTime.to_iso8601()
 
     Map.put(brew, :timestamp, timestamp)
+  end
+
+  defp add_id(brew) do
+    Map.put(brew, :id, UUID.uuid4())
   end
 
   defp add_display_name(beans) do

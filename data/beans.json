@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "type": "Regular",
+    "roaster": "Proud Mary",
+    "name": "Peachy Keen - Costa Rica Finca Rio Grande Honey",
+    "roast_date": "2023-02-15"
+  },
+  {
+    "id": 2,
+    "type": "Decaf",
+    "roaster": "Proud Mary",
+    "name": "Pillow Fight - Colombia EA Decaf de Cana - Huila Washed",
+    "roast_date": "2023-02-09"
+  }
+]

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pourovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Pourovers</h1>
+    <%= if message do %>
+      <p><em><%= message %></em></p>
+    <% end %>
+    <a href="/pourovers/new">New Pourover</a>
+  </body>
+</html>

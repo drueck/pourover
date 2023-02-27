@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <title>New Pourover</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+      padding: 2em;
+    }
+
+    h1 {
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    label,
+    input[type=text],
+    input[type=number],
+    select,
+    textarea {
+      display: block;
+      width: 100%;
+    }
+
+    label.checkbox {
+      display: inline;
+    }
+
+    input[type=text],
+    input[type=number],
+    select,
+    textarea {
+      margin-bottom: 1em;
+    }
+
+    .checkbox-container {
+      margin-bottom: 1em;
+    }
+
+    .section {
+      margin-bottom: 1em;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>New Pourover</h1>
+    <form action="/pourovers" method="POST">
+      <div class="section">
+        <h2>Beans</h2>
+        <label for="beans">Beans</label>
+        <select id="beans" name="beans">
+          <%= for bean <- beans do %>
+            <option value="<%= bean.id %>"><%= bean.display_name %></option>
+          <% end %>
+        </select>
+        <label for="beans_weight">Whole Beans Weight</label>
+        <input type="number" step="0.1" id="beans_weight" name="beans_weight" value="24" />
+      </div>
+      <div class="section">
+        <h2>Grind</h2>
+        <label for="grinder">Grinder</label>
+        <select id="grinder" name="grinder">
+          <%= for grinder <- grinders do %>
+            <option value="<%= grinder.id %>"><%= grinder.name %></option>
+          <% end %>
+        </select>
+        <label for="grind_setting">Grind Setting</label>
+        <input type="text" id="grind_setting" name="grind_setting" />
+      </div>
+      <div class="section">
+        <h2>Sift</h2>
+        <label for="sifted_below">Sifted Below Microns</label>
+        <input type="number" id="sifted_below" name="sifted_below" value="300" />
+        <label for="sifted_below_weight">Sifted Below Weight</label>
+        <input type="number" step="0.1" id="sifted_below_weight" name="sifted_below_weight" />
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="included_fines" name="included_fines" />
+          <label class="checkbox" for="included_fines">Included Fines?</label>
+        </div>
+
+        <label for="sifted_above">Sifted Above Microns</label>
+        <input type="number" id="sifted_above" name="sifted_above" value="800" />
+        <label for="sifted_above_weight">Sifted Above Weight</label>
+        <input type="number" step="0.1" id="sifted_above_weight" name="sifted_above_weight" />
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="included_boulders" name="included_boulders" checked />
+          <label class="checkbox" for="included_boulders">Included Boulders?</label>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Brewer</h2>
+        <label for="brewer">Brewer</label>
+        <select id="brewer" name="brewer">
+          <%= for brewer <- brewers do %>
+            <option value="<%= brewer.id %>"><%= brewer.name %></option>
+          <% end %>
+        </select>
+        <label for="filter">Filter</label>
+        <select id="filter" name="filter">
+          <%= for filter <- filters do %>
+            <option value="<%= filter.id %>"><%= filter.name %></option>
+          <% end %>
+        </select>
+      </div>
+      <div class="section">
+        <h2>Pour</h2>
+        <label for="grounds_weight">Grounds Weight</label>
+        <input type="number" step="0.1" id="grounds_weight" name="grounds_weight" />
+        <label for="water_temp">Water Temperature</label>
+        <input type="number" id="water_temp" name="water_temp" />
+        <label for="bloom_water_weight">Bloom Water Weight</label>
+        <input type="number" step="0.1" id="bloom_water_weight" name="bloom_water_weight" />
+        <label for="pour_water_weight">Pour Water Weight</label>
+        <input type="number" step="0.1" id="pour_water_weight" name="pour_water_weight" />
+        <label for="pour_finished">Pour Finished</label>
+        <input type="text" id="pour_finished" name="pour_finished" />
+        <label for="draw_down_finished">Draw Down Finished</label>
+        <input type="text" id="draw_down_finished" name="draw_down_finished" />
+        <label for="technique_notes">Technique Notes</label>
+        <textarea id="technique_notes" name="technique_notes"></textarea>
+      </div>
+      <div class="section">
+        <h2>Results</h2>
+        <label for="taste_notes">Taste Notes</label>
+        <textarea id="taste_notes" name="taste_notes"></textarea>
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>

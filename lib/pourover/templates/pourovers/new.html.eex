@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>New Pourover</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
     <style type="text/css">
     body {
       padding: 2em;
@@ -53,7 +54,7 @@
             <option value="<%= bean.id %>"><%= bean.display_name %></option>
           <% end %>
         </select>
-        <label for="beans_weight">Whole Beans Weight</label>
+        <label for="beans_weight">Whole Beans Weight (g)</label>
         <input type="number" step="0.1" id="beans_weight" name="beans_weight" value="24" />
       </div>
       <div class="section">
@@ -69,21 +70,18 @@
       </div>
       <div class="section">
         <h2>Sift</h2>
-        <label for="sifted_below">Sifted Below Microns</label>
+        <label for="sifted_below">Sifted Fines Less Than (μm)</label>
         <input type="number" id="sifted_below" name="sifted_below" value="300" />
-        <label for="sifted_below_weight">Sifted Below Weight</label>
+        <label for="sifted_below_weight">Weight of Fines (g)</label>
         <input type="number" step="0.1" id="sifted_below_weight" name="sifted_below_weight" />
-
         <div class="checkbox-container">
           <input type="checkbox" id="included_fines" name="included_fines" />
           <label class="checkbox" for="included_fines">Included Fines?</label>
         </div>
-
-        <label for="sifted_above">Sifted Above Microns</label>
+        <label for="sifted_above">Sifted Boulders Greater Than (μm)</label>
         <input type="number" id="sifted_above" name="sifted_above" value="800" />
-        <label for="sifted_above_weight">Sifted Above Weight</label>
+        <label for="sifted_above_weight">Weight of Boulders (g)</label>
         <input type="number" step="0.1" id="sifted_above_weight" name="sifted_above_weight" />
-
         <div class="checkbox-container">
           <input type="checkbox" id="included_boulders" name="included_boulders" checked />
           <label class="checkbox" for="included_boulders">Included Boulders?</label>
@@ -106,17 +104,17 @@
       </div>
       <div class="section">
         <h2>Pour</h2>
-        <label for="grounds_weight">Grounds Weight</label>
+        <label for="grounds_weight">Grounds Weight (g)</label>
         <input type="number" step="0.1" id="grounds_weight" name="grounds_weight" />
-        <label for="water_temp">Water Temperature</label>
+        <label for="water_temp">Water Temperature (°F)</label>
         <input type="number" id="water_temp" name="water_temp" />
-        <label for="bloom_water_weight">Bloom Water Weight</label>
+        <label for="bloom_water_weight">Bloom Water Weight (g)</label>
         <input type="number" step="0.1" id="bloom_water_weight" name="bloom_water_weight" />
-        <label for="pour_water_weight">Pour Water Weight</label>
+        <label for="pour_water_weight">Pour Water Weight (g)</label>
         <input type="number" step="0.1" id="pour_water_weight" name="pour_water_weight" />
-        <label for="pour_finished">Pour Finished</label>
+        <label for="pour_finished">Pour Finished (MM:SS)</label>
         <input type="text" id="pour_finished" name="pour_finished" />
-        <label for="draw_down_finished">Draw Down Finished</label>
+        <label for="draw_down_finished">Draw Down Finished (MM:SS)</label>
         <input type="text" id="draw_down_finished" name="draw_down_finished" />
         <label for="technique_notes">Technique Notes</label>
         <textarea id="technique_notes" name="technique_notes"></textarea>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pourovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Viewing Pourover</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/pourovers">Pourovers List</a></li>
+      </ul>
+    </nav>
+    <h2>Setup</h2>
+    <ul>
+      <li><%= brew.timestamp %></li>
+      <li><%= brew.beans %></li>
+      <li><%= brew.grinder %>, Setting: <%= brew.grind_setting %></li>
+      <li><%= brew.brewer %></li>
+      <li><%= brew.filter %></li>
+    </ul>
+    <h2>Sift</h2>
+    <ul>
+      <li>Whole bean weight: <%= brew.beans_weight %></li>
+      <li>Filters used: <%= brew.sifted_below %> - <%= brew.sifted_above %></li>
+      <li>Weight of grounds after sifting: <%= brew.grounds_weight %></li>
+    </ul>
+    <h2>Brew</h2>
+    <ul>
+      <li>Water temp: <%= brew.water_temp %></li>
+      <li>Bloom water weight: <%= brew.bloom_water_weight %></li>
+      <li>Pour water weight: <%= brew.pour_water_weight %></li>
+      <li>Pour finished: <%= brew.pour_finished %></li>
+      <li>Draw down finished: <%= brew.draw_down_finished %></li>
+    </ul>
+    <h2>Technique Notes</h2>
+    <p><%= brew.technique_notes %></p>
+    <h2>Taste Notes</h2>
+    <p><%= brew.taste_notes %></p>
+  </body>
+</html>

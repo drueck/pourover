@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pourovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Pourovers</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/pourovers/new">New Pourover</a></li>
+      </ul>
+    </nav>
+    <ul>
+    <%= for brew <- brews do %>
+      <li>
+        <div class="brew-list-entry">
+          <p>
+            <a href="/pourovers/<%= brew.id %>"><%= brew.timestamp %></a><br>
+            <%= brew.beans %><br>
+            <%= brew.grinder %>, Setting: <%= brew.grind_setting %><br>
+            <%= brew.brewer %> with the <%= brew.filter %> filter<br>
+            Drawdown time: <%= brew.draw_down_finished %>
+          </p>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </body>
+</html>

@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Chemex 6 Cup"
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Hario V60 Ceramic"
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Bodum French Press"
   }
 ]

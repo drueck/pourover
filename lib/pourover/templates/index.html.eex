@@ -10,6 +10,11 @@
     <%= if message do %>
       <p><em><%= message %></em></p>
     <% end %>
-    <a href="/pourovers/new">New Pourover</a>
+    <nav>
+      <ul>
+        <li><a href="/pourovers">Pourovers List</a></li>
+        <li><a href="/pourovers/new">New Pourover</a></li>
+      </ul>
+    </nav>
   </body>
 </html>

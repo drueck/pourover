@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "type": "Regular",
     "roaster": "Proud Mary",
     "name": "Peachy Keen - Costa Rica Finca Rio Grande Honey",
@@ -9,12 +9,21 @@
     "roast_date": "2023-02-15"
   },
   {
-    "id": 2,
+    "id": "2",
     "type": "Decaf",
     "roaster": "Proud Mary",
     "name": "Pillow Fight - Colombia EA Decaf de Cana - Huila Washed",
     "variety": "Castillo & Caturra",
     "tasting_notes": "Milk chocolate, mandarin orange, stone fruit, & malt",
     "roast_date": "2023-02-09"
+  },
+  {
+    "id": "3",
+    "type": "Regular",
+    "roaster": "Black Lion",
+    "name": "Ethiopian Organic Coffee",
+    "variety": "Arabica",
+    "tasting_notes": "Unknown",
+    "roast_date": "Unknown"
   }
 ]

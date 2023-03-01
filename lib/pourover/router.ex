@@ -7,22 +7,43 @@ defmodule Pourover.Router do
   plug :match
   plug :dispatch
 
+  alias Pourover.Brew
+
   get "/" do
     render(conn, "index.html", message: nil)
   end
 
+  get "/pourovers" do
+    lookups = read_lookups()
+
+    brews =
+      read_data("brews.json")
+      |> Enum.sort_by(& &1.timestamp, :desc)
+      |> Enum.map(&Brew.denormalize(&1, lookups))
+
+    render(conn, "pourovers/index.html", brews: brews)
+  end
+
   get "/pourovers/new" do
-    grinders = read_data("grinders.json")
-    beans = read_data("beans.json") |> add_display_name()
-    brewers = read_data("brewers.json")
-    filters = read_data("filters.json")
+    lookups = read_lookups()
 
     render(conn, "pourovers/new.html",
-      beans: beans,
-      grinders: grinders,
-      brewers: brewers,
-      filters: filters
+      beans: lookups.beans,
+      grinders: lookups.grinders,
+      brewers: lookups.brewers,
+      filters: lookups.filters
     )
+  end
+
+  get "/pourovers/:id" do
+    lookups = read_lookups()
+
+    brew =
+      read_data("brews.json")
+      |> Enum.find(&(&1.id == id))
+      |> Brew.denormalize(lookups)
+
+    render(conn, "pourovers/view.html", brew: brew)
   end
 
   post "/pourovers" do
@@ -47,6 +68,14 @@ defmodule Pourover.Router do
     "data/#{filename}"
     |> File.read!()
     |> Jason.decode!(keys: :atoms)
+  end
+
+  defp read_lookups() do
+    %{}
+    |> Map.put(:grinders, read_data("grinders.json"))
+    |> Map.put(:beans, read_data("beans.json") |> add_display_name())
+    |> Map.put(:brewers, read_data("brewers.json"))
+    |> Map.put(:filters, read_data("filters.json"))
   end
 
   defp render(%{status: status} = conn, template, assigns) do

@@ -28,7 +28,7 @@ defmodule Pourover.Router do
     lookups = read_lookups()
 
     render(conn, "pourovers/new.html",
-      beans: lookups.beans,
+      beans: lookups.beans |> Enum.filter(&(!&1.empty)),
       grinders: lookups.grinders,
       brewers: lookups.brewers,
       filters: lookups.filters

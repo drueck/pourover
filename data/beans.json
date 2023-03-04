@@ -6,7 +6,8 @@
     "name": "Peachy Keen - Costa Rica Finca Rio Grande Honey",
     "variety": "Centroamericano",
     "tasting_notes": "Grapefruit, apricot, honey, & vanila",
-    "roast_date": "2023-02-15"
+    "roast_date": "2023-02-15",
+    "empty": true
   },
   {
     "id": "2",
@@ -15,7 +16,8 @@
     "name": "Pillow Fight - Colombia EA Decaf de Cana - Huila Washed",
     "variety": "Castillo & Caturra",
     "tasting_notes": "Milk chocolate, mandarin orange, stone fruit, & malt",
-    "roast_date": "2023-02-09"
+    "roast_date": "2023-02-09",
+    "empty": true
   },
   {
     "id": "3",
@@ -24,6 +26,26 @@
     "name": "Ethiopian Organic Coffee",
     "variety": "Arabica",
     "tasting_notes": "Unknown",
-    "roast_date": "Unknown"
+    "roast_date": "Unknown",
+    "empty": false
+  },
+  {
+    "id": "4",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Kenya Nyawira AA",
+    "variety": "SL28, SL34",
+    "tasting_notes": "blackberry, kiwi, red clover",
+    "roast_date": "2023-02-23",
+    "empty": false
+  },
+  {
+    "id": "5",
+    "type": "Decaf",
+    "roaster": "Heart",
+    "name": "Columbia Decaf Huila",
+    "tasting_notes": "chocolate, cream soda, fig",
+    "roast_date": "2023-02-27",
+    "empty": false
   }
 ]

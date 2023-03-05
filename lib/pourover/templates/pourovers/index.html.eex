@@ -22,7 +22,8 @@
             <%= brew.beans %><br>
             <%= brew.grinder %>, Setting: <%= brew.grind_setting %><br>
             <%= brew.brewer %> with the <%= brew.filter %> filter<br>
-            Drawdown time: <%= brew.draw_down_finished %>
+            Drawdown time: <%= brew.draw_down_finished %><br>
+            <a href="/pourovers/<%= brew.id %>/edit">Edit</a>
           </p>
         </div>
       </li>

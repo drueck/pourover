@@ -35,6 +35,37 @@ defmodule Pourover.Router do
     )
   end
 
+  get "pourovers/:id/edit" do
+    lookups = read_lookups()
+
+    brew =
+      read_data("brews.json")
+      |> Enum.find(&(&1.id == id))
+
+    render(conn, "pourovers/edit.html",
+      brew: brew,
+      beans: lookups.beans |> Enum.filter(&(!&1.empty)),
+      grinders: lookups.grinders,
+      brewers: lookups.brewers,
+      filters: lookups.filters
+    )
+  end
+
+  post "/pourovers/:id" do
+    case File.read("data/brews.json") do
+      {:ok, contents} -> Jason.decode!(contents, keys: :atoms)
+      _ -> []
+    end
+    |> Enum.map(fn
+      %{id: ^id} -> conn.params
+      brew -> brew
+    end)
+    |> Jason.encode!(pretty: true)
+    |> then(fn data -> File.write!("data/brews.json", data) end)
+
+    render(conn, "index.html", message: "Edit saved!")
+  end
+
   get "/pourovers/:id" do
     lookups = read_lookups()
 

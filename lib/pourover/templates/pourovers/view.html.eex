@@ -11,6 +11,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/pourovers">Pourovers List</a></li>
+        <li><a href="/pourovers/<%= brew.id %>/edit">Edit this Pourover</a></li>
       </ul>
     </nav>
     <h2>Setup</h2>

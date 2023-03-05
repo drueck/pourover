@@ -24,11 +24,18 @@
     <h2>Sift</h2>
     <ul>
       <li>Whole bean weight: <%= brew.beans_weight %></li>
-      <li>Filters used: <%= brew.sifted_below %> - <%= brew.sifted_above %></li>
-      <li>Weight of grounds after sifting: <%= brew.grounds_weight %></li>
+      <li>Sieves used: <%= brew.finer_sieve %> - <%= brew.coarser_sieve %></li>
+      <li>Sift duration: <%= brew.sift_duration %></li>
+    </ul>
+    <h2>Particle Size Distribution</h2>
+    <ul>
+      <li>Coarser: <%= brew.coarser_grounds_weight %></li>
+      <li>Medium: <%= brew.medium_grounds_weight %></li>
+      <li>Finer: <%= brew.finer_grounds_weight %></li>
     </ul>
     <h2>Brew</h2>
     <ul>
+      <li>Grounds weight: <%= brew.grounds_weight %></li>
       <li>Water temp: <%= brew.water_temp %></li>
       <li>Bloom water weight: <%= brew.bloom_water_weight %></li>
       <li>Pour water weight: <%= brew.pour_water_weight %></li>

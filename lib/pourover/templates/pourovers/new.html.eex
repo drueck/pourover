@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <style type="text/css">
     body {
-      padding: 2em;
+      padding: 1em;
     }
 
     h1 {
@@ -32,14 +32,21 @@
     select,
     textarea {
       margin-bottom: 1em;
-    }
-
-    .checkbox-container {
-      margin-bottom: 1em;
+      min-width: 3em;
     }
 
     .section {
       margin-bottom: 1em;
+    }
+
+    .particle-size-distribution {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      column-gap: 0.5em;
+    }
+
+    .particle-size-distribution input[type=number] {
+      width: unset;
     }
     </style>
   </head>
@@ -70,23 +77,40 @@
       </div>
       <div class="section">
         <h2>Sift</h2>
-        <label for="sifted_below">Sifted Fines Less Than (μm)</label>
-        <input type="number" id="sifted_below" name="sifted_below" value="300" />
-        <label for="sifted_below_weight">Weight of Fines (g)</label>
-        <input type="number" step="0.1" id="sifted_below_weight" name="sifted_below_weight" />
-        <div class="checkbox-container">
-          <input type="checkbox" id="included_fines" name="included_fines" />
-          <label class="checkbox" for="included_fines">Included Fines?</label>
-        </div>
-        <label for="sifted_above">Sifted Boulders Greater Than (μm)</label>
-        <input type="number" id="sifted_above" name="sifted_above" value="800" />
-        <label for="sifted_above_weight">Weight of Boulders (g)</label>
-        <input type="number" step="0.1" id="sifted_above_weight" name="sifted_above_weight" />
-        <div class="checkbox-container">
-          <input type="checkbox" id="included_boulders" name="included_boulders" checked />
-          <label class="checkbox" for="included_boulders">Included Boulders?</label>
+        <label for="coarser_sieve">Coarser Sieve (μm)</label>
+        <input type="number" id="coarser_sieve" name="coarser_sieve" />
+
+        <label for="finer_sieve">Finer Sieve (μm)</label>
+        <input type="number" id="finer_sieve" name="finer_sieve" />
+
+        <label for="sift_duration">Sift Duration (mm:ss)</label>
+        <input type="text" id="sift_duration" name="sift_duration">
+
+        <h3>Particle Size Distribution</h3>
+        <div class="particle-size-distribution">
+          <label for="coarser_grounds_weight">Coarser&nbsp;(g)</label>
+          <input type="number" step="0.1" id="coarser_grounds_weight" name="coarser_grounds_weight" />
+          <div class="checkbox-container">
+            <input type="checkbox" id="included_coarser_grounds" name="included_coarser_grounds" checked />
+            <label class="checkbox" for="included_coarser_grounds">Included</label>
+          </div>
+
+          <label for="medium_grounds_weight">Medium&nbsp;(g)</label>
+          <input type="number" step="0.1" id="medium_grounds_weight" name="medium_grounds_weight" />
+          <div class="checkbox-container">
+            <input type="checkbox" id="included_medium_grounds" name="included_medium_grounds" checked />
+            <label class="checkbox" for="included_medium_grounds">Included</label>
+          </div>
+
+          <label for="finer_grounds_weight">Finer&nbsp;(g)</label>
+          <input type="number" step="0.1" id="finer_grounds_weight" name="finer_grounds_weight" />
+          <div class="checkbox-container">
+            <input type="checkbox" id="included_finer_grounds" name="included_finer_grounds" />
+            <label class="checkbox" for="included_finer_grounds">Included</label>
+          </div>
         </div>
       </div>
+
       <div class="section">
         <h2>Brewer</h2>
         <label for="brewer">Brewer</label>
@@ -106,15 +130,17 @@
         <h2>Pour</h2>
         <label for="grounds_weight">Grounds Weight (g)</label>
         <input type="number" step="0.1" id="grounds_weight" name="grounds_weight" />
+        <label for="ratio">Water to Coffee Ratio Multiplier</label>
+        <input type="number" step="0.1" id="ratio" value="16" />
         <label for="water_temp">Water Temperature (°F)</label>
         <input type="number" id="water_temp" name="water_temp" />
         <label for="bloom_water_weight">Bloom Water Weight (g)</label>
         <input type="number" step="0.1" id="bloom_water_weight" name="bloom_water_weight" />
         <label for="pour_water_weight">Pour Water Weight (g)</label>
         <input type="number" step="0.1" id="pour_water_weight" name="pour_water_weight" />
-        <label for="pour_finished">Pour Finished (MM:SS)</label>
+        <label for="pour_finished">Pour Finished (mm:ss)</label>
         <input type="text" id="pour_finished" name="pour_finished" />
-        <label for="draw_down_finished">Draw Down Finished (MM:SS)</label>
+        <label for="draw_down_finished">Draw Down Finished (mm:ss)</label>
         <input type="text" id="draw_down_finished" name="draw_down_finished" />
         <label for="technique_notes">Technique Notes</label>
         <textarea id="technique_notes" name="technique_notes"></textarea>
@@ -126,5 +152,21 @@
       </div>
       <button type="submit">Save</button>
     </form>
+    <script type="text/javascript">
+      const groundsWeightInput = document.getElementById("grounds_weight");
+      const ratioInput = document.getElementById("ratio");
+      const pourWaterWeightInput = document.getElementById("pour_water_weight");
+      const updatePourWaterWeight = () => {
+        const groundsWeight = parseFloat(groundsWeightInput.value);
+        const multiplier = parseFloat(ratioInput.value);
+
+        if (groundsWeight && multiplier) {
+          pourWaterWeightInput.value = Math.round(groundsWeight * multiplier)
+        }
+      }
+
+      groundsWeightInput.addEventListener("change", updatePourWaterWeight);
+      ratioInput.addEventListener("change", updatePourWaterWeight);
+    </script>
   </body>
 </html>

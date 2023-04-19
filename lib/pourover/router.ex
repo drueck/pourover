@@ -73,6 +73,7 @@ defmodule Pourover.Router do
       read_data("brews.json")
       |> Enum.find(&(&1.id == id))
       |> Brew.denormalize(lookups)
+      |> Brew.prepare_for_display()
 
     render(conn, "pourovers/view.html", brew: brew)
   end

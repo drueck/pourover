@@ -9,6 +9,14 @@ defmodule Pourover.Brew do
     |> Map.update(:filter, "missing", &filter_name(&1, lookups.filters))
   end
 
+  def prepare_for_display(brew) do
+    brew
+    |> Map.update(:technique_notes, "", &newlines_to_br_tags/1)
+    |> Map.update(:taste_notes, "", &newlines_to_br_tags/1)
+  end
+
+  defp newlines_to_br_tags(s), do: String.replace(s, "\n", "<br>")
+
   defp beans_display_name(bean_id, beans) do
     beans
     |> Enum.find(&(&1.id == bean_id))

@@ -37,7 +37,7 @@
     "variety": "SL28, SL34",
     "tasting_notes": "blackberry, kiwi, red clover",
     "roast_date": "2023-02-23",
-    "empty": false
+    "empty": true
   },
   {
     "id": "5",
@@ -46,6 +46,143 @@
     "name": "Columbia Decaf Huila",
     "tasting_notes": "chocolate, cream soda, fig",
     "roast_date": "2023-02-27",
+    "empty": true
+  },
+  {
+    "id": "6",
+    "type": "Regular",
+    "roaster": "Stumptown",
+    "name": "Colombia",
+    "variety": "Unknown",
+    "tasting_notes": "baked apple",
+    "roast_date": "2023-02-18",
+    "empty": false
+  },
+  {
+    "id": "7",
+    "type": "Decaf",
+    "roaster": "Heart",
+    "name": "Columbia Decaf Huila",
+    "tasting_notes": "chocolate, cream soda, fig",
+    "roast_date": "2023-03-13",
+    "empty": true
+  },
+  {
+    "id": "8",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Kenya Gachuiro AA",
+    "variety": "SL28, SL34, Ruiru 11",
+    "tasting_notes": "gooseberry, caramel, hibiscus",
+    "roast_date": "2023-03-13",
+    "empty": true
+  },
+  {
+    "id": "9",
+    "type": "Decaf",
+    "roaster": "Heart",
+    "name": "Columbia Decaf Huila",
+    "variety": "Castillo, Caturra",
+    "process": "EA decaffeination",
+    "tasting_notes": "chocolate, cream soda, fig",
+    "roast_date": "2023-03-30",
+    "empty": true
+  },
+  {
+    "id": "10",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Colombia Jhon Dumar",
+    "variety": "Castillo",
+    "process": "Fully washed",
+    "tasting_notes": "cola, red apple, plum",
+    "roast_date": "2023-03-16",
+    "empty": true
+  },
+  {
+    "id": "11",
+    "type": "Decaf",
+    "roaster": "Heart",
+    "name": "Columbia Decaf Huila",
+    "variety": "Castillo, Caturra",
+    "process": "EA decaffeination",
+    "tasting_notes": "chocolate, cream soda, fig",
+    "roast_date": "2023-04-10",
+    "empty": true
+  },
+  {
+    "id": "12",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Colombia Luz Divia Fierro Calderón",
+    "variety": "Pink Bourbon",
+    "process": "Fully washed",
+    "tasting_notes": "strawberry jam, bergamot, honeycomb toffee",
+    "roast_date": "2023-04-06",
+    "empty": true
+  },
+  {
+    "id": "13",
+    "type": "Regular",
+    "roaster": "Roseline",
+    "name": "Sundried Yabitu Koba, Guji, Ethiopia",
+    "variety": "Ethiopia Landraces, Bourbon & Typica",
+    "process": "Natural",
+    "tasting_notes": "kiwi, strawberry, chocolate",
+    "roast_date": "2023-04-13",
+    "empty": false
+  },
+  {
+    "id": "14",
+    "type": "Decaf",
+    "roaster": "Roseline",
+    "name": "Decaf Planadas, Tolima, Colombia",
+    "variety": "Caturra, Castillo, Typica",
+    "process": "Sugar derived Ethyl Acetate",
+    "tasting_notes": "blackberry jam, chocolate",
+    "roast_date": "2023-04-11",
+    "empty": false
+  },
+  {
+    "id": "15",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Ethiopia Danche",
+    "variety": "Wolisho and Dega",
+    "process": "Fully washed",
+    "tasting_notes": "cotton candy, peach, lilac",
+    "roast_date": "2023-04-24",
+    "empty": false
+  },
+  {
+    "id": "16",
+    "type": "Regular",
+    "roaster": "Heart",
+    "name": "Colombia Didier Fierro",
+    "variety": "Gesha",
+    "process": "Fully washed",
+    "tasting_notes": "nectarine, jasmine, milk chocolate",
+    "roast_date": "2023-04-27",
+    "empty": false
+  },
+  {
+    "id": "17",
+    "type": "Regular",
+    "roaster": "Onyx",
+    "name": "Geometry",
+    "process": "two different washed coffees",
+    "tasting_notes": "berries, stone fruit, earl grey, honeysuckle, round",
+    "roast_date": "2023-05-05",
+    "empty": false
+  },
+  {
+    "id": "18",
+    "type": "Regular",
+    "roaster": "Onyx",
+    "name": "Tropical Weather",
+    "process": "one natural, one washed and fermented",
+    "tasting_notes": "mixed berries, sweat tea, raw honey, plum",
+    "roast_date": "2023-05-05",
     "empty": false
   }
 ]

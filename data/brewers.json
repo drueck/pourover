@@ -10,5 +10,13 @@
   {
     "id": "3",
     "name": "Bodum French Press"
+  },
+  {
+    "id": "4",
+    "name": "Aeropress"
+  },
+  {
+    "id": "5",
+    "name": "Hario Switch"
   }
 ]
